@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Kalkulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator BMI</h1>
+        <form method="POST">
+            <label>Berat Badan (kg):</label>
+            <input type="number" name="weight" required step="0.1">
+            <label>Tinggi Badan (cm):</label>
+            <input type="number" name="height" required step="0.1">
+            <button type="submit">Hitung</button>
+        </form>
+
+        {% if bmi %}
+        <div class="result">
+            <h2>Hasil BMI: {{ bmi }}</h2>
+            <p>Kategori: <strong>{{ category }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
