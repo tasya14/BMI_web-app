@@ -26,7 +26,7 @@ def index():
         height = float(request.form["height"])
         bmi = calculate_bmi(weight, height)
         category = interpret_bmi(bmi)
-    return render_template("index.html", bmi=bmi, category=category)
+    return render_template("templates/index.html", bmi=bmi, category=category)
 
 if __name__ == "__main__":
     import os
